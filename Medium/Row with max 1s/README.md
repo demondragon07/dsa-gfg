@@ -1,4 +1,4 @@
-<h2><a href="https://practice.geeksforgeeks.org/problems/row-with-max-1s0023/0">Row with max 1s</a></h2><h3>Difficulty Level : Medium</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a boolean 2D array of n x m dimensions where each row is sorted. Find&nbsp;the&nbsp;0-based index of the first row&nbsp;that has&nbsp;the maximum number of <strong>1's</strong>.</span></p>
+<h2><a href="https://practice.geeksforgeeks.org/problems/row-with-max-1s0023/1">Row with max 1s</a></h2><h3>Difficulty Level : Medium</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a boolean 2D array of n x m dimensions where each row is sorted. Find&nbsp;the&nbsp;0-based index of the first row&nbsp;that has&nbsp;the maximum number of <strong>1's</strong>.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
@@ -29,7 +29,7 @@ indexing).
 You don't need to read input or print anything. Your task is to complete the function&nbsp;<strong>rowWithMax1s()</strong>&nbsp;which takes the array of booleans&nbsp;<strong>arr[][],</strong><strong>&nbsp;n </strong>and <strong>m&nbsp;</strong>as input parameters and returns the 0-based index of the first row that has the most number of 1s. If no such&nbsp;row exists, return -1.</span><br>
 &nbsp;</p>
 
-<p><span style="font-size:18px"><strong>Expected Time Complexity:</strong>&nbsp;O(Nlog(M))<br>
+<p><span style="font-size:18px"><strong>Expected Time Complexity:</strong>&nbsp;O(N+M)<br>
 <strong>Expected Auxiliary Space:</strong>&nbsp;O(1)</span></p>
 
 <p><br>
