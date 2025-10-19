@@ -1,33 +1,31 @@
 // User Function Template
 class Solution {
   public:
-  vector<int> dijkstra(int V, vector<vector<int>> &edges, int src){
-        unordered_map<int,vector<pair<int,int>>>adj;
-        for(auto x:edges){
-            int u=x[0];
-            int v=x[1];
-            int w=x[2];
-            adj[u].push_back({v,w});
-            adj[v].push_back({u,w});
-        }
-       vector<int>result(V,INT_MAX);
-       priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
+    vector<int> dijkstra(int V, vector<vector<int>> &edges, int src) {
+      unordered_map<int,vector<pair<int,int>>>adj;
+      for(auto x:edges){
+          adj[x[0]].push_back({x[1],x[2]});
+          adj[x[1]].push_back({x[0],x[2]});
+      }
+      vector<int>result(V,INT_MAX);
        result[src]=0;
-       pq.push({0,src});
-       while(!pq.empty()){
-           pair<int,int>a=pq.top();
-           pq.pop();
-           int u=a.second;
-           int dist=a.first;
+       set<pair<int,int>>s;
+       s.insert({0,src});
+       while(!s.empty()){
+           pair<int,int>p=*s.begin();
+           int d=p.first;
+           int u=p.second;
+           s.erase({d,u});
            for(auto v:adj[u]){
                int node=v.first;
-               int d=v.second;
+               int dist=v.second;
                if(d+dist<result[node]){
+                if(d+dist!=INT_MAX) s.erase({result[node],node});
                    result[node]=d+dist;
-                   pq.push({d+dist,node});
+                   s.insert({d+dist,node});
                }
            }
        }
-       return result;
+      return result;
     }
 };
